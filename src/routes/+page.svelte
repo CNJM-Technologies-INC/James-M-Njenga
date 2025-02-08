@@ -6,18 +6,26 @@
   import TimelineItem from '../components/TimelineItem.svelte';
   import Header from '../components/Header.svelte';
   import Footer from '../components/Footer.svelte';
+  import InteractiveCube from '../components/InteractiveCube.svelte';
   
   let activeSection = 'home';
 </script>
 <Header />
 <section id="home" class="hero">
   <div class="hero-content" in:fly={{ y: 100 }}>
-      <h1>James Mwangi Njenga</h1>
-      <h2>Full Stack Developer | AI/ML Engineer</h2>
-      <div class="cta-container">
+    <div class="hero-grid">
+      <div class="cube-container">
+        <InteractiveCube />
+      </div>
+      <div class="hero-text">
+        <h1>James Mwangi Njenga</h1>
+        <h2>Full Stack Developer | AI/ML Engineer</h2>
+        <div class="cta-container">
           <a href="/HireMe" class="cta-button">Hire Me</a>
           <a href="/JAMESMWANGICV.pdf" download class="cta-button secondary">Download CV</a>
+        </div>
       </div>
+    </div>
   </div>
 </section>
 
@@ -83,8 +91,39 @@
     --purple: #6C5B7B;
     --dark-bg: #1A1A2E;
   }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-  /* Base section styles */
+  .cube-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-text {
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .cube-container {
+      margin: 0 auto;
+    }
+
+    .hero-text {
+      text-align: center;
+    }
+  }
   .section {
     padding: 5rem 2rem;
     max-width: 1200px;
