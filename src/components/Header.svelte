@@ -42,9 +42,9 @@
     {#if isMenuOpen}
         <div class="mobile-nav" transition:slide>
             <a href="/" class="nav-item">Home</a>
-            <a href="#projects" class="nav-item">Projects</a>
-            <a href="#skills" class="nav-item">Skills</a>
-            <a href="#experience" class="nav-item">Experience</a>
+            <a href="/#projects" class="nav-item">Projects</a>
+            <a href="/#skills" class="nav-item">Skills</a>
+            <a href="/#experience" class="nav-item">Experience</a>
             <a href="/contacts" class="nav-item">Contact</a>
         </div>
     {/if}
